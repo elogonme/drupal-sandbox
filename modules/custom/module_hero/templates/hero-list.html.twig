@@ -1,0 +1,10 @@
+{{ attach_library('module_hero/hero-style')}}
+<h4>{{title}}</h4>
+<ol>
+	{% for item in items %}
+		<li class="animate__animated {{random(['animate__bounce', 'animate__flash', 'animate__pulse', 'animate__rubberBand', 'animate__swing'])}}">{{item.name}}"
+		</li>
+	{% endfor %}
+</ol>
+<strong>
+	is coming from our custom twig file</strong>
