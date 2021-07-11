@@ -36,6 +36,12 @@ function _module_hero_article_validate(&$form, $form_state)
   }
 }
 
-function hero_entity_entity_presave(Drupal\Core\Entity\EntityInterface $entity)
+/**
+ * Implements hook entity presave
+ */
+function module_hero_entity_presave(Drupal\Core\Entity\EntityInterface $entity)
 {
+  if ($entity->bundle() == 'article') {
+    \Drupal::messenger()->addMessage('We are resaving article with new name ');
+  }
 }
